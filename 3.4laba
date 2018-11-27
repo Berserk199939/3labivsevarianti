@@ -1,0 +1,57 @@
+#include <stdio.h>
+#define YES 1
+#define NO 0
+void main( void )
+{
+    system("chcp 1251");
+int c; // текущий символ из потока
+
+int flag; // признак слова
+
+int found;
+int ds=0;
+int db=0;
+
+
+flag = YES;
+found = NO;
+
+while( (c = getchar()) != EOF )
+        {
+
+        if( c == ' ' || c == '.' || c == '\n' || c == ',')
+           {
+   if (flag == NO)
+   {
+ds++;
+flag=YES;
+   }
+           }
+
+
+
+
+ //----------------------------------------------------------------------------------------------------
+     else
+{
+    if (c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'y' || c == 'Y' || c == 'i' || c == 'I'|| c == 'o' || c == 'O')
+    {
+        if ( found == YES )
+{
+    db++;
+    flag = NO;
+}
+    }
+    else
+    {
+    found = YES;
+    }
+
+}
+
+        }
+    printf("кол-во гласных = %d\n", db );
+    printf("кол-во слов, содержащих гласные буквы = %d\n", ds );
+
+        return 0;
+}
