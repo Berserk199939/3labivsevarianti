@@ -1,0 +1,45 @@
+#include <stdio.h>
+// определение символических констант
+#define YES 1
+#define NO 0
+void main( void )
+{
+int c; // текущий символ из потока
+int prev_c; // предыдущий символ
+int flag; // признак слова
+int cnt; // счётчик
+int found; // признак того, что буквы повторились
+int ds=0;
+int db=0;
+// начальные присваивания (инициализация переменных)
+cnt = 0;
+flag = NO;
+found = 0;
+prev_c = ' ';
+while( (c = getchar()) != EOF )
+        {
+
+        if( c == ' ' || c == '.' || c == '\n' || c == ',')
+           {
+                if ( flag==YES )
+        {
+           ds++;
+        }
+found =db/ds;
+flag=NO;
+
+
+        }
+     else
+{
+
+    db++;
+    flag=YES;
+}
+
+        }
+    printf("kolvo slov = %d\n", ds );
+    printf("dlina vseh bukv = %d\n", db );
+    printf("srednya dlina slov = %d\n", found );
+        return 0;
+}
