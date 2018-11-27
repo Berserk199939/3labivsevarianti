@@ -1,0 +1,48 @@
+#include <stdio.h>
+#define YES 1
+#define NO 0
+void main( void )
+{
+    system("chcp 1251");
+int c; // текущий символ из потока
+int flag; // признак гласной в слове
+int ds=0;
+int db=0;
+int pgv;
+pgv = YES; // признак гласной буквы вначале слова
+
+
+flag = YES;
+
+
+while( (c = getchar()) != EOF )
+        {
+
+        if( c == ' ' || c == '.' || c == '\n' || c == ',')
+           {
+               pgv = YES;
+   if (flag == NO)
+   {
+ds++;
+flag=YES;
+   }
+           }
+
+ //----------------------------------------------------------------------------------------------------
+     else
+{
+    if(pgv == YES)
+        {
+        pgv = NO;
+    if (c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'y' || c == 'Y' || c == 'i' || c == 'I'|| c == 'o' || c == 'O')
+    {
+    flag = NO;
+    }
+        }
+}
+
+        }
+    printf("слова, в которых гласные стоят вначале слова = %d\n", ds );
+
+        return 0;
+}
