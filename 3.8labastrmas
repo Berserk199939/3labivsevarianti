@@ -1,0 +1,44 @@
+#include <stdio.h>
+#define YES 1
+#define NO 0
+void main(void)
+{
+    system ("chcp 1251");
+    char str[100];
+    int i = 0;
+    int flag = NO;
+    int counterpovtorov = 0;
+//-----------------------------------
+    printf("Введите символы\n");
+    gets(str);
+//-----------------------------------
+while(str[i] != '\0')
+{
+    if (str[i] == ' ')
+    {
+        if(flag == YES)
+        {
+            counterpovtorov++;
+            flag = NO;
+        }
+    }
+//--------------------------------------------------------------------------------------
+    else
+    {
+        if (str[i] == str[i-1])
+        {
+            flag = YES;
+        }
+
+
+    }
+
+i++;
+}
+
+
+
+
+printf("Слова, в которых буквы подряд повторяются = %d\n",counterpovtorov);
+    return 0;
+}
