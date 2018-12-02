@@ -1,0 +1,71 @@
+#include <stdio.h>
+#define YES 1
+#define NO 0
+void main( void )
+{
+    system("chcp 1251");
+int c; // текущий символ из потока
+int ds=0;
+int db=0;
+int psvs;
+int pgvs;
+int found = NO;
+psvs = NO; // признак согласной в конце слова
+pgvs = NO; // признак гласной в начале слова
+
+
+while( (c = getchar()) != EOF )
+        {
+
+        if( c == ' ' || c == '.' || c == '\n' || c == ',')
+           {
+               if(found == YES)
+               {
+   if (pgvs == YES)
+   {
+       if ( psvs == YES)
+        {
+            ds++;
+            pgvs = NO;
+            psvs = NO;
+            found = NO;
+        }
+   }
+               }
+           }
+
+ //----------------------------------------------------------------------------------------------------
+     else
+{
+    if (c == 'a' || c == 'e' || c == 'y' || c == 'u' || c == 'i' || c == 'o')
+    {
+        pgvs = YES;
+        found = NO;
+    }
+    else
+    {
+        if (pgvs == YES)
+        {
+            if (c == 'q' || c == 'w' || c == 'r' || c == 't' || c == 'p' || c == 's' || c == 'd' || c == 'f'|| c == 'g' || c == 'h' || c == 'j' || c == 'k' || c == 'l' || c == 'z' || c == 'x' || c == 'c' || c == 'v' || c == 'b' || c == 'n' || c == 'm')
+            {
+                psvs = YES;
+                found = YES;
+
+            }
+        else
+            {
+
+                psvs = NO;
+                pgvs = NO;
+            }
+        }
+    }
+
+
+}
+
+        }
+    printf("слова, в которых гласные стоят в начале слова, согласные в конце слова = %d\n", ds );
+
+        return 0;
+}
