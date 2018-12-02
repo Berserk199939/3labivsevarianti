@@ -1,0 +1,40 @@
+#include <stdio.h>
+#define YES 1
+#define NO 0
+void main( void )
+{
+    system("chcp 1251");
+int c; // текущий символ из потока
+int flag; // признак согласной в слове
+int ds=0;
+int db=0;
+int pzs;
+int flag_2 = NO;
+int prv_c = ' ';
+pzs = NO; // признак согласной в конце слова
+
+
+flag = YES;
+
+
+while( (c = getchar()) != EOF )
+        {
+
+        if( c == ' ' || c == '.' || c == '\n' || c == ',')
+           {
+   if (pzs == YES)
+   {
+ds++;
+pzs = NO;
+   }
+           }
+
+ //----------------------------------------------------------------------------------------------------
+     else
+{
+    if (c == 'q' || c == 'w' || c == 'r' || c == 't' || c == 'p' || c == 's' || c == 'd' || c == 'f'|| c == 'g' || c == 'h' || c == 'j' || c == 'k' || c == 'l' || c == 'z' || c == 'x' || c == 'c' || c == 'v' || c == 'b' || c == 'n' || c == 'm')
+        {
+            pzs = YES;
+        }
+        else
+        {
