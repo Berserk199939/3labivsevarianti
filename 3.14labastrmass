@@ -1,0 +1,52 @@
+#include <stdio.h>
+#define YES 1
+#define NO 0
+void main(void)
+{
+    system ("chcp 1251");
+    char str[100];
+    int i = 0;
+    int flag = YES;
+    int ctr = 0;
+    int ctrb = 0;
+    int found = NO;
+    int ret = 0;
+    int ret_p =0;
+//-----------------------------------
+    printf("Введите символы\n");
+    gets(str);
+//-----------------------------------
+while(str[i] != '\0')
+{
+    if (str[i] == ' ')
+    {
+       if (str[i-1] == ret)
+       {
+           ctr++;
+           flag = YES;
+       }
+
+    }
+//--------------------------------------------------------------------------------------
+    else
+    {
+        if(str[i] != ' ')
+        {
+            if(flag == YES)
+            {
+                ret = str[i];
+                flag = NO;
+            }
+        }
+
+    }
+
+i++;
+}
+
+
+
+
+printf("Вывести количество слов, которые начинаются и заканчиваются на одну и ту же букву = %d\n",ctr);
+    return 0;
+}
