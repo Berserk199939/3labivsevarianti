@@ -1,0 +1,57 @@
+#include <stdio.h>
+#define YES 1
+#define NO 0
+void main(void)
+{
+    system ("chcp 1251");
+    char str[100];
+    int i = 0;
+    int flag = YES;
+    int ctr = 0;
+    int ctrb = 0;
+    int found = NO;
+    int ret = 0;
+    int ret_p =0;
+//-----------------------------------
+    printf("Введите символы\n");
+    gets(str);
+//-----------------------------------
+while(str[i] != '\0')
+{
+    if (str[i] == ' ')
+    {
+        if(ret<ctrb)
+        {
+            ret = ctrb;
+        }
+        ctrb = 0;
+
+    }
+//--------------------------------------------------------------------------------------
+    else
+    {
+
+
+       if (str[i] != ' ')
+       {
+           ctrb++;
+                if (flag == YES)
+                {
+                    ret = ctrb;
+                    flag = NO;
+                }
+
+       }
+
+
+    }
+
+i++;
+}
+
+
+
+
+printf("Вывести самое длинное слово = %d\n",ret);
+    return 0;
+}
