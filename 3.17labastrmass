@@ -1,0 +1,43 @@
+#include <stdio.h>
+#define YES 1
+#define NO 0
+void main(void)
+{
+    system ("chcp 1251");
+    char str[100];
+    int i = 0;
+    int flag = NO;
+    int ctr = 0;
+//-----------------------------------
+    printf("Введите символы\n");
+    gets(str);
+//-----------------------------------
+while(str[i] != '\0')
+{
+    if (str[i] == ' ')
+    {
+        if (flag == YES)
+        {
+            ctr++;
+            flag = NO;
+        }
+    }
+//--------------------------------------------------------------------------------------
+   else
+   {
+       if (str[i] == '.')
+       {
+           printf("Количество слов в предложении = %d\n",ctr);
+           ctr = 0;
+       }
+       else
+       {
+           flag = YES;
+       }
+   }
+
+i++;
+}
+
+    return 0;
+}
