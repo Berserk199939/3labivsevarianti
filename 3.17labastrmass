@@ -1,0 +1,46 @@
+#include <stdio.h>
+void main(void)
+{
+    system ("chcp 1251");
+    char str[100];
+    int i = 0;
+    int ctr = 0;
+    int ctrb = 0;
+    int ret = 0;
+//-----------------------------------
+    printf("Введите символы\n");
+    gets(str);
+//-----------------------------------
+while(str[i] != '\0')
+{
+    if (str[i] == ' ')
+    {
+        if (ctrb > ctr)
+        {
+            ret++;
+            ctrb = 0;
+            ctr =0;
+        }
+    }
+//--------------------------------------------------------------------------------------
+   else
+   {
+       if (str[i] == 'a' || str[i] == 'e' || str[i] == 'y' || str[i] == 'u' || str[i] == 'o' || str[i] == 'i')
+       {
+          ctrb++;
+       }
+       else
+       {
+           if(str[i] == 'q' || str[i] == 'w' || str[i] == 'r' || str[i] == 't' || str[i] == 'p' || str[i] == 's' || str[i] == 'd' || str[i] == 'f' || str[i] == 'g' || str[i] == 'h' || str[i] == 'j' || str[i] == 'k' || str[i] == 'l' || str[i] == 'z' || str[i] == 'x' || str[i] == 'c' || str[i] == 'v' || str[i] == 'b' || str[i] == 'n' || str[i] == 'm')
+           {
+            ctr++;
+           }
+
+       }
+   }
+
+i++;
+}
+printf("Вывести количество слов, в которых гласных букв больше, чем согласных = %d\n", ret);
+    return 0;
+}
